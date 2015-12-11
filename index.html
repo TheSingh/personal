@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Robin Singh</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Robin Singh</h1>
+						<p>Software Engineer &nbsp;&bull;&nbsp; Student &nbsp;&bull;&nbsp; Sports Enthusiast</p>
+						<nav>
+							<ul>
+                                <li><a href="#" class="icon fa-user" onmouseover="setText(1)" onmouseout="setText(0)"><span class="label">About Me</span></a></li>
+                                <li><a href="https://www.linkedin.com/in/thesingh" class="icon fa-linkedin" onmouseover="setText(2)" onmouseout="setText(0)"><span class="label">LinkedIn</span></a></li>
+                                <li><a href="#" class="icon fa-comments" onmouseover="setText(3)" onmouseout="setText(0)"><span class="label">Blog</span></a></li>
+                                <li><a href="https://github.com/TheSingh" class="icon fa-github" onmouseover="setText(4)" onmouseout="setText(0)"><span class="label">Github</span></a></li>
+                                <li><a href="http://stackoverflow.com/users/5648355/robin-singh" class="icon fa-stack-overflow" onmouseover="setText(5)" onmouseout="setText(0)"><span class="label">Stack Overflow</span></a></li>
+							</ul>
+                            <div class="menu-text-div">
+                                <h6 class="menu-text" id="menutext"> Hello, What can I do for you today? </h6>
+                            </div>
+                            
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; robinsingh.us </span>
+					</footer>
+
+			</div>
+		</div>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+            
+            function setText(x) {
+                var menutext = document.getElementById("menutext");
+                                
+                switch(x) {
+                    case 0:
+                        $(".menu-text").finish().fadeOut(function() {
+                            $(".menu-text").text("Hello! What can I do for you today?").fadeIn();
+                        });
+                        break;
+                    case 1: 
+                        $(".menu-text").finish().fadeOut(function() {
+                            $(".menu-text").text("About Me :)").fadeIn();
+                        });                        break;
+                    case 2:
+                        $(".menu-text").finish().fadeOut(function() {
+                            $(".menu-text").text("Find me on LinkedIn!").fadeIn();
+                        });                        break;
+                    case 3: 
+                        $(".menu-text").finish().fadeOut(function() {
+                            $(".menu-text").text("My Blog (coming soon!)").fadeIn();
+                        });                        break;
+                    case 4: 
+                        $(".menu-text").finish().fadeOut(function() {
+                            $(".menu-text").text("See me on GitHub!").fadeIn();
+                        });                        break;
+                    case 5:
+                        $(".menu-text").finish().fadeOut(function() {
+                            $(".menu-text").text("View my Stack Overflow account").fadeIn();
+                        });                        break;
+                }
+                $(".menu-text").fadeIn(200);
+                console.log(1);
+            }
+            
+
+
+            
+		</script>
+	</body>
+</html>

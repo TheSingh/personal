@@ -19,7 +19,7 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Robin Singh</h1>
-						<p>Software Engineer &nbsp;&bull;&nbsp; Student &nbsp;&bull;&nbsp; Seeking  </p>
+						<p>Software Engineer &nbsp;&bull;&nbsp; Student &nbsp;&bull;&nbsp; In love with C++ </p>
 						<nav>
 							<ul>
                                 <li><a href="#" class="icon fa-user" onmouseover="setText(1)" onmouseout="setText(0)"><span class="label">About Me</span></a></li>
@@ -48,42 +48,45 @@
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
             
-            if(navigator.userAgent.match(/iPhone/i)) {
+            var onMobile = (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/iPod/i));
+            
+            if(onMobile) {
                 $(".menu-text-div").css("width", "80%");
             }
             
             function setText(x) {
-                var menutext = document.getElementById("menutext");
-                                
-                switch(x) {
-                    case 0:
-                        $(".menu-text").finish().fadeOut(function() {
-                            $(".menu-text").text("Hello! What can I do for you today?").fadeIn();
-                        });
-                        break;
-                    case 1: 
-                        $(".menu-text").finish().fadeOut(function() {
-                            $(".menu-text").text("About Me :)").fadeIn();
-                        });                        break;
-                    case 2:
-                        $(".menu-text").finish().fadeOut(function() {
-                            $(".menu-text").text("Find me on LinkedIn!").fadeIn();
-                        });                        break;
-                    case 3: 
-                        $(".menu-text").finish().fadeOut(function() {
-                            $(".menu-text").text("My Blog (coming soon!)").fadeIn();
-                        });                        break;
-                    case 4: 
-                        $(".menu-text").finish().fadeOut(function() {
-                            $(".menu-text").text("See me on GitHub!").fadeIn();
-                        });                        break;
-                    case 5:
-                        $(".menu-text").finish().fadeOut(function() {
-                            $(".menu-text").text("View my Stack Overflow account").fadeIn();
-                        });                        break;
-                }
-                $(".menu-text").fadeIn(200);
-                console.log(1);
+                if(!onMobile) {
+                    var menutext = document.getElementById("menutext");
+
+                    switch(x) {
+                        case 0:
+                            $(".menu-text").finish().fadeOut(function() {
+                                $(".menu-text").text("Hello! What can I do for you today?").fadeIn();
+                            });
+                            break;
+                        case 1: 
+                            $(".menu-text").finish().fadeOut(function() {
+                                $(".menu-text").text("About Me :)").fadeIn();
+                            });                        break;
+                        case 2:
+                            $(".menu-text").finish().fadeOut(function() {
+                                $(".menu-text").text("Find me on LinkedIn!").fadeIn();
+                            });                        break;
+                        case 3: 
+                            $(".menu-text").finish().fadeOut(function() {
+                                $(".menu-text").text("My Blog (coming soon!)").fadeIn();
+                            });                        break;
+                        case 4: 
+                            $(".menu-text").finish().fadeOut(function() {
+                                $(".menu-text").text("See me on GitHub!").fadeIn();
+                            });                        break;
+                        case 5:
+                            $(".menu-text").finish().fadeOut(function() {
+                                $(".menu-text").text("View my Stack Overflow account").fadeIn();
+                            });                        break;
+                    }
+                    $(".menu-text").fadeIn(200);
+                }            
             }
             
 
